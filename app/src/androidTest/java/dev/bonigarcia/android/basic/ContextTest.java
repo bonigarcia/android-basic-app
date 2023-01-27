@@ -26,7 +26,7 @@ import org.junit.runner.RunWith;
 
 import static org.junit.Assert.*;
 
-import es.uc3m.androind.automatedtesting.helper.ContextHelper;
+import dev.bonigarcia.android.basic.helper.ContextHelper;
 
 @RunWith(AndroidJUnit4.class)
 public class ContextTest {
