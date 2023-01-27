@@ -20,7 +20,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import es.uc3m.androind.automatedtesting.helper.StringHelper;
+import dev.bonigarcia.android.basic.helper.StringHelper;
 
 public class BasicUnitTest {
 
