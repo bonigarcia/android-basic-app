@@ -1,5 +1,5 @@
 /*
- * (C) Copyright 2023 Boni Garcia (https://bonigarcia.github.io/)
+ * (C) Copyright 2022 Boni Garcia (https://bonigarcia.github.io/)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package dev.bonigarcia.android.basic;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,17 +29,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), SecondActivity.class);
-                EditText nameText = findViewById(R.id.editText);
-                Bundle bundle = new Bundle();
-                bundle.putString("name", nameText.getText().toString());
-                intent.putExtras(bundle);
+        findViewById(R.id.button).setOnClickListener(view -> {
+            Intent intent = new Intent(view.getContext(), SecondActivity.class);
+            EditText nameText = findViewById(R.id.editText);
+            Bundle bundle = new Bundle();
+            bundle.putString("name", nameText.getText().toString());
+            intent.putExtras(bundle);
 
-                startActivity(intent);
-            }
+            startActivity(intent);
         });
     }
 

@@ -16,17 +16,15 @@
  */
 package dev.bonigarcia.android.basic;
 
+import static org.junit.Assert.assertEquals;
+
 import android.content.Context;
 
-import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
+import androidx.test.platform.app.InstrumentationRegistry;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-
-import static org.junit.Assert.*;
-
-import dev.bonigarcia.android.basic.helper.ContextHelper;
 
 @RunWith(AndroidJUnit4.class)
 public class ContextTest {
@@ -34,8 +32,8 @@ public class ContextTest {
     @Test
     public void contextTest() {
         Context context = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        ContextHelper contextHelper = new ContextHelper(context);
-        assertEquals(contextHelper.getGreetings("John"), "Hello, John!");
+        String appName = context.getResources().getString(R.string.app_name);
+        assertEquals(appName, "Testing Demo");
     }
 
 }

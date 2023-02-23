@@ -16,12 +16,11 @@
  */
 package dev.bonigarcia.android.basic;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import dev.bonigarcia.android.basic.helper.ContextHelper;
 
 public class SecondActivity extends AppCompatActivity {
 
@@ -31,9 +30,10 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.activity_second);
 
         Bundle bundle = getIntent().getExtras();
-
-        ContextHelper contextHelper = new ContextHelper(this);
-        String text = contextHelper.getGreetings(bundle.getString("name"));
+        Resources resources = getResources();
+        String text = String.format(resources.getString(R.string.hello),
+                bundle.getString("name"));
+        text += " It's " + DateHelper.formatDate(System.currentTimeMillis());
 
         TextView textView = findViewById(R.id.textView);
         textView.setText(text);

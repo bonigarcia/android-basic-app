@@ -14,21 +14,16 @@
  * limitations under the License.
  *
  */
-package dev.bonigarcia.android.basic.helper;
+package dev.bonigarcia.android.basic;
 
-import android.content.Context;
+import java.text.DateFormat;
+import java.util.Date;
 
-import dev.bonigarcia.android.basic.R;
+public class DateHelper {
 
-public class ContextHelper {
-    private final Context context;
-
-    public ContextHelper(Context context) {
-        this.context = context;
+    public static String formatDate(long timeMillis) {
+        DateFormat formatter = DateFormat.getDateTimeInstance();
+        Date date = new Date(timeMillis);
+        return formatter.format(date);
     }
-
-    public String getGreetings(String name) {
-        return StringHelper.format(context.getResources().getString(R.string.hello), name);
-    }
-
 }

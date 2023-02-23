@@ -22,6 +22,7 @@ import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
+import static org.hamcrest.CoreMatchers.containsString;
 
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
@@ -43,7 +44,7 @@ public class UserInterfaceTest {
     public void basicUITest() {
         onView(withId(R.id.editText)).perform(typeText("John"));
         onView(withId(R.id.button)).perform(click());
-        onView(withId(R.id.textView)).check(matches(withText("Hello, John!")));
+        onView(withId(R.id.textView)).check(matches(withText(containsString("Hello, John!"))));
     }
 
 }
