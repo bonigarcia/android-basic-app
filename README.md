@@ -3,7 +3,7 @@
 
 # Basic Android App
 
-This repository contains a basic Android app created with Java.
+This repository contains a basic Android app (created with Java), tests (local and instrumentes), and CI setup (with GitHub Actions).
 
 ## About
 
