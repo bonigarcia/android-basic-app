@@ -16,18 +16,20 @@
  */
 package dev.bonigarcia.android.basic;
 
-import static androidx.test.espresso.Espresso.onView;
-import static androidx.test.espresso.action.ViewActions.click;
-import static androidx.test.espresso.action.ViewActions.typeText;
-import static androidx.test.espresso.assertion.ViewAssertions.matches;
-import static androidx.test.espresso.matcher.ViewMatchers.withId;
-import static androidx.test.espresso.matcher.ViewMatchers.withText;
-import static org.hamcrest.CoreMatchers.containsString;
+import android.view.View;
 
+import androidx.test.espresso.Espresso;
+import androidx.test.espresso.ViewAction;
+import androidx.test.espresso.ViewAssertion;
+import androidx.test.espresso.action.ViewActions;
+import androidx.test.espresso.assertion.ViewAssertions;
+import androidx.test.espresso.matcher.ViewMatchers;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.LargeTest;
 
+import org.hamcrest.CoreMatchers;
+import org.hamcrest.Matcher;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -42,9 +44,22 @@ public class UserInterfaceTest {
 
     @Test
     public void basicUITest() {
-        onView(withId(R.id.editText)).perform(typeText("John"));
-        onView(withId(R.id.button)).perform(click());
-        onView(withId(R.id.textView)).check(matches(withText(containsString("Hello, John!"))));
+        // 1. Exercise activity
+        // 1.1 Type "john" in edit text
+        Matcher<View> view1 = ViewMatchers.withId(R.id.editText);
+        ViewAction action1 = ViewActions.typeText("John");
+        Espresso.onView(view1).perform(action1);
+
+        // 1.2 Click on button
+        Matcher<View> view2 = ViewMatchers.withId(R.id.button);
+        ViewAction action2 = ViewActions.click();
+        Espresso.onView(view2).perform(action2);
+
+        // 2. Verify outcome
+        Matcher<View> view3 = ViewMatchers.withId(R.id.textView);
+        ViewAssertion assertion1 = ViewAssertions.matches(
+                ViewMatchers.withText(CoreMatchers.containsString("Hello, John!")));
+        Espresso.onView(view3).check(assertion1);
     }
 
 }

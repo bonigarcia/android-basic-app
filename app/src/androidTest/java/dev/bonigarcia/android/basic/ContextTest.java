@@ -16,13 +16,12 @@
  */
 package dev.bonigarcia.android.basic;
 
-import static org.junit.Assert.assertEquals;
-
 import android.content.Context;
 
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.platform.app.InstrumentationRegistry;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -32,8 +31,12 @@ public class ContextTest {
     @Test
     public void contextTest() {
         Context context = InstrumentationRegistry.getInstrumentation().getTargetContext();
+
+        // Exercise context
         String appName = context.getResources().getString(R.string.app_name);
-        assertEquals(appName, "Testing Demo");
+
+        // Verify outcome
+        Assert.assertEquals(appName, "Testing Demo");
     }
 
 }
