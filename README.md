@@ -1,3 +1,4 @@
+[![Build Status](https://github.com/bonigarcia/android-basic-app/workflows/build/badge.svg)](https://github.com/bonigarcia/android-basic-app/actions)
 [![License badge](https://img.shields.io/badge/license-Apache2-green.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 [![Twitter](https://img.shields.io/badge/follow-@boni_gg-green.svg)](https://twitter.com/boni_gg)
 
