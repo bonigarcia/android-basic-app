@@ -4,7 +4,7 @@ on: [push, pull_request, workflow_dispatch]
 
 jobs:
   tests:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout project
         uses: actions/checkout@v3
