@@ -29,6 +29,7 @@ jobs:
 
       - name: List available AVD devices
         run: |
+          set JAVA_OPTS=-XX:+IgnoreUnrecognizedVMOptions --add-modules java.se.ee
           echo "Available AVD devices:"
           $ANDROID_HOME/tools/bin/avdmanager list device
 
