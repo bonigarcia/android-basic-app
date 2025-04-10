@@ -15,14 +15,6 @@ jobs:
           distribution: 'temurin'
           java-version: 17
 
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
-
-      - name: List available AVD devices
-        run: |
-          echo "Available AVD devices:"
-          $ANDROID_HOME/tools/bin/avdmanager list device
-
       - name: Run unit tests
         run: ./gradlew test
 
@@ -37,5 +29,5 @@ jobs:
         with:
           api-level: 29
           arch: x86_64
-          profile: Nexus 6
+          profile: Pixel 3 XL
           script: ./gradlew connectedCheck
