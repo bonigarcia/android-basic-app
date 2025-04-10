@@ -16,7 +16,7 @@ jobs:
           java-version: 17
 
       - name: Run unit tests
-        run: ./gradlew test
+        run: ./gradlew test -i
 
       - name: Enable KVM
         run: |
@@ -24,7 +24,7 @@ jobs:
           sudo udevadm control --reload-rules
           sudo udevadm trigger --name-match=kvm
 
-      - name: Run instrumented tests
+      - name: Run Android tests
         uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: 29
