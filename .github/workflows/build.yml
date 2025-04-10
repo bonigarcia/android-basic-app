@@ -16,7 +16,7 @@ jobs:
           java-version: 17
 
       - name: Run unit tests
-        run: ./gradlew test -i
+        run: ./gradlew test
 
       - name: Enable KVM
         run: |
