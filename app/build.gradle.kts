@@ -4,6 +4,12 @@ plugins {
     alias(libs.plugins.kotlin.compose)
 }
 
+tasks.withType<Test> {
+    this.testLogging {
+        this.showStandardStreams = true
+    }
+}
+
 android {
     namespace = "es.uc3m.android.rest"
     compileSdk = 35
