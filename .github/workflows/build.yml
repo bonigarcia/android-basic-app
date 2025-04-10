@@ -24,6 +24,10 @@ jobs:
           sudo udevadm control --reload-rules
           sudo udevadm trigger --name-match=kvm
 
+      - name: List available AVD profiles
+        run: |
+          avdmanager list device
+
       - name: Run instrumented tests
         uses: reactivecircus/android-emulator-runner@v2
         with:
