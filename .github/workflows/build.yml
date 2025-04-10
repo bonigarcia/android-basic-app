@@ -15,6 +15,9 @@ jobs:
           distribution: 'temurin'
           java-version: 17
 
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
       - name: Run unit tests
         run: ./gradlew test
 
