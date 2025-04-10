@@ -29,5 +29,5 @@ jobs:
         with:
           api-level: 29
           arch: x86_64
-          profile: Nexus 6
+          profile: Pixel 2
           script: ./gradlew connectedCheck
