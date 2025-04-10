@@ -29,5 +29,5 @@ jobs:
         with:
           api-level: 29
           arch: x86_64
-          profile: Pixel 3 XL
+          profile: pixel_4
           script: ./gradlew connectedCheck
