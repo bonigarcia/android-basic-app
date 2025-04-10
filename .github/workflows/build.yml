@@ -4,6 +4,9 @@ on: [push, pull_request, workflow_dispatch]
 
 jobs:
   tests:
+    strategy:
+      matrix:
+        avd: [ nexus_6, pixel_4, pixel_xl ]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout project
@@ -29,5 +32,5 @@ jobs:
         with:
           api-level: 29
           arch: x86_64
-          profile: pixel_4
+          profile: ${{ matrix.avd }}
           script: ./gradlew connectedCheck
