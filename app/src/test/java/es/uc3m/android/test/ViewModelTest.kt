@@ -14,9 +14,9 @@
  * limitations under the License.
  *
  */
-package es.uc3m.android.rest
+package es.uc3m.android.test
 
-import es.uc3m.android.rest.viewmodel.RestViewModel
+import es.uc3m.android.test.viewmodel.RestViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.UnconfinedTestDispatcher

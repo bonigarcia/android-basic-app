@@ -14,7 +14,7 @@
  * limitations under the License.
  *
  */
-package es.uc3m.android.rest
+package es.uc3m.android.test
 
 import android.os.Bundle
 import android.widget.Toast
@@ -56,10 +56,10 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import es.uc3m.android.rest.dummyjson.Recipe
-import es.uc3m.android.rest.dummyjson.Todo
-import es.uc3m.android.rest.ui.theme.MyAppTheme
-import es.uc3m.android.rest.viewmodel.RestViewModel
+import es.uc3m.android.test.dummyjson.Recipe
+import es.uc3m.android.test.dummyjson.Todo
+import es.uc3m.android.test.ui.theme.MyAppTheme
+import es.uc3m.android.test.viewmodel.RestViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

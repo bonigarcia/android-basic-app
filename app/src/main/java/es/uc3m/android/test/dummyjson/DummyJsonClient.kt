@@ -14,24 +14,19 @@
  * limitations under the License.
  *
  */
-package es.uc3m.android.rest
+package es.uc3m.android.test.dummyjson
 
-import es.uc3m.android.rest.dummyjson.DummyJsonClient
-import kotlinx.coroutines.test.runTest
-import org.junit.Assert.assertTrue
-import org.junit.Test
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
-class RestClientTest {
+object DummyJsonClient {
+    private const val BASE_URL = "https://dummyjson.com/"
 
-    @Test
-    fun dummyJsonTest() = runTest {
-        // Exercise
-        val response = DummyJsonClient.apiService.getTodos()
-
-        // Verify
-        assertTrue(response.isSuccessful)
-        var todos = response.body()?.todos!!
-        println(">>> todos: $todos")
-        assertTrue(todos.isNotEmpty())
+    val apiService: DummyJsonService by lazy {
+        Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(DummyJsonService::class.java)
     }
 }

@@ -11,11 +11,11 @@ tasks.withType<Test> {
 }
 
 android {
-    namespace = "es.uc3m.android.rest"
+    namespace = "es.uc3m.android.test"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "es.uc3m.android.rest"
+        applicationId = "es.uc3m.android.test"
         minSdk = 24
         targetSdk = 35
         versionCode = 1

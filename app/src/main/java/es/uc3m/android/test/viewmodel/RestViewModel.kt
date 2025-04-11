@@ -14,13 +14,13 @@
  * limitations under the License.
  *
  */
-package es.uc3m.android.rest.viewmodel
+package es.uc3m.android.test.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import es.uc3m.android.rest.dummyjson.DummyJsonClient
-import es.uc3m.android.rest.dummyjson.Recipe
-import es.uc3m.android.rest.dummyjson.Todo
+import es.uc3m.android.test.dummyjson.DummyJsonClient
+import es.uc3m.android.test.dummyjson.Recipe
+import es.uc3m.android.test.dummyjson.Todo
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch

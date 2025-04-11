@@ -14,7 +14,7 @@
  * limitations under the License.
  *
  */
-package es.uc3m.android.rest.ui.theme
+package es.uc3m.android.test.ui.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme

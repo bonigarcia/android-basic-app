@@ -14,19 +14,14 @@
  * limitations under the License.
  *
  */
-package es.uc3m.android.rest.dummyjson
+package es.uc3m.android.test.ui.theme
 
-import retrofit2.Response
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
+import androidx.compose.ui.graphics.Color
 
-interface DummyJsonService {
+val Purple80 = Color(0xFFD0BCFF)
+val PurpleGrey80 = Color(0xFFCCC2DC)
+val Pink80 = Color(0xFFEFB8C8)
 
-    @GET("todos")
-    suspend fun getTodos(): Response<Todos>
-
-    @POST("recipes/add")
-    suspend fun addRecipes(@Body recipe: Recipe): Response<Recipe>
-
-}
+val Purple40 = Color(0xFF6650a4)
+val PurpleGrey40 = Color(0xFF625b71)
+val Pink40 = Color(0xFF7D5260)
