@@ -16,7 +16,7 @@
  */
 package es.uc3m.android.test
 
-import es.uc3m.android.test.dummyjson.DummyJsonClient
+import es.uc3m.android.test.model.DummyJsonClient
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertTrue
 import org.junit.Test
@@ -30,7 +30,7 @@ class RestClientTest {
 
         // Verify
         assertTrue(response.isSuccessful)
-        var todos = response.body()?.todos!!
+        val todos = response.body()?.todos!!
         println(">>> todos: $todos")
         assertTrue(todos.isNotEmpty())
     }

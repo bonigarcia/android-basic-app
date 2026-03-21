@@ -18,9 +18,9 @@ package es.uc3m.android.test.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import es.uc3m.android.test.dummyjson.DummyJsonClient
-import es.uc3m.android.test.dummyjson.Recipe
-import es.uc3m.android.test.dummyjson.Todo
+import es.uc3m.android.test.model.DummyJsonClient
+import es.uc3m.android.test.model.Recipe
+import es.uc3m.android.test.model.Todo
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -54,7 +54,7 @@ class RestViewModel : ViewModel() {
     fun addRecipe(recipe: Recipe) {
         viewModelScope.launch {
             try {
-                val response = DummyJsonClient.apiService.addRecipes(recipe)
+                val response = DummyJsonClient.apiService.addRecipe(recipe)
                 _toastMessage.value = response.code().toString() + " " + response.message()
             } catch (e: Exception) {
                 _toastMessage.value = e.message

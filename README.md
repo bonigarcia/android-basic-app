@@ -8,4 +8,4 @@ This repository contains a basic Android app (created with Kotlin and Java), tes
 
 ## About
 
-This is a project made by [Boni García](https://bonigarcia.dev/), Associate Professor at [Universidad Carlos III de Madrid](https://www.it.uc3m.es/bogarcia/index.html). Copyright &copy; 2023-2025.
+This is a project made by [Boni García](https://bonigarcia.dev/), Associate Professor at [Universidad Carlos III de Madrid](https://www.it.uc3m.es/bogarcia/index.html). Copyright &copy; 2023-2026.

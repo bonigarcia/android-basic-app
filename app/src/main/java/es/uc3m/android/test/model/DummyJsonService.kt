@@ -14,7 +14,7 @@
  * limitations under the License.
  *
  */
-package es.uc3m.android.test.dummyjson
+package es.uc3m.android.test.model
 
 import retrofit2.Response
 import retrofit2.http.Body
@@ -27,6 +27,6 @@ interface DummyJsonService {
     suspend fun getTodos(): Response<Todos>
 
     @POST("recipes/add")
-    suspend fun addRecipes(@Body recipe: Recipe): Response<Recipe>
+    suspend fun addRecipe(@Body recipe: Recipe): Response<Recipe>
 
 }
